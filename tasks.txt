@@ -1,0 +1,49 @@
+Welcome to the Back End Engineering Test - you have 3 hours to complete it. The first three tasks are mandatory, the fourth and the fifth are optional,
+do them if you have enough time. Please return only the source code of the solution to me by copying it from your favourite IDE, and pasting it to the Google
+Docs document I am sending you.
+
+Tasks can be solved in any of the programming languages Java, Go, JavaScript, Python, Scala or C / C ++, without the use of a framework. Please do not use
+functions or libraries that solve a given problem in one or two lines of code. Comments within the code are welcome.
+
+We would appreciate it if you would write an explanation of your idea on how you would solve the task in English, before you start writing the actual code. 
+
+Good luck!
+
+
+1. Write a method or a function that finds an element in a linked list, that is n places away from the end of the list, ideally with just one pass through
+the list.
+
+2. Write a method or a function that merges two sorted arrays, A and B, into A. 
+The array A is initialized with a sufficient number of elements so that all values ​​from A and B can be accommodated. 
+Values ​​of 0 represent "empty" elements, placed at the end of the array A, that can be filled in. 
+The array A should contain all the elements from A and B in sorted order. 
+The sort order of the array A should not be changed.
+
+EXAMPLE:
+Input A = [-1, 15, 0, 0, 0, 0] (effectively A is [-1, 15]) 
+B = [4, 3, 2, 1]
+The result is A = [-1, 1, 2, 3, 4, 15]
+
+3. Write a method or a function that finds the first character that has exactly 2 occurrences in the input string.
+
+EXAMPLE:
+ABAACCBA-> B
+ABC> ''
+ABBCCA-> A
+
+4. Write a method or a function that extracts 530000 elements from the input array containing 900000 elements, which are evenly distributed in the input set.
+- as an illustration, let's say that the input data set contains 9 elements (x1, x2, ..., x9).
+- possible solutions would be: (x1, x3, x5, x7, x9), (x1, x3, x4, x6, x8, x9) ... where a larger number of solutions would be a set of 5 elements
+(a certain number of solutions would have 6 elements).
+So it is important that all the elements of the resulting set are evenly distributed in the input set and that there is an appropriate number of them.
+
+5. Write a method or a function that returns words in reverse order for a given text. Words are considered to be groups of letters separated by a whitespace
+character. The first word of a new sentence should start with a capital letter and sentences should be separated with full stop ("."). All other words except
+the first word of the input sentence should retain their initial form. Please do not use built-in string helper methods, like for example split, replace or
+reverse.
+EXAMPLE:
+Agree with you the council does. Your apprentice Skywalker will be.
+Does council the you with agree. Be will Skywalker apprentice your.
+
+
+

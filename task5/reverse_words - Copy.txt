@@ -1,0 +1,69 @@
+'''
+@Input: 
+Agree with you the council does. Your apprentice Skywalker will be.
+@Output:
+Does council the you with agree. Be will Skywalker apprentice your.
+'''
+text = "Very good to learn Physics. I cannot disagree about THE best science ever. Do you like it?"
+delimiter = [".", "?", "!"]
+
+def reverse_words(text, delimiter):
+	word = ""
+	sentence_text = ""
+	reverse_text = ""
+	flag_previous_was_delimiter = False
+
+	for i in text:
+		'''3 - when word is formed take further steps; word delimiter is the
+		space char or sentence delimeter'''
+		if i == " " or i in delimiter:
+
+			'''6 - if it is the first word of the sentence, then convert the
+			first letter to be lowercase; this will be the last word of the
+			reversed sentence '''
+			if sentence_text == "" and word != "":
+				word = word[0].lower() + word[1:]
+
+			if i == " ":
+
+				'''5 - if previously sentence delimiter was present, then
+				avoid to add the space char in front of delimiter to avoid
+				double space'''
+				if flag_previous_was_delimiter:
+					sentence_text = word  + sentence_text
+					flag_previous_was_delimiter = False
+					
+				else:
+					'''4 - from words form sentence; put word in front of 
+					previously saved words to keep reverse order; also, put the 
+					space char in front of word'''
+					sentence_text = " " + word  + sentence_text
+
+			'''7 - if the sentence delimiter is pesent then add sentence to
+			reverse text, put sentence to empty string to be prepared for next
+			sentence, make the first letter of the word to be uppercase,
+			because this is the last word of the sentence, or the first word of
+			the reversed sentence, and put the flag to True to mark delimiter
+			appereance (important to avoid double space in front delimiter)'''
+			if i in delimiter:
+				word = word[0].upper() + word[1:]
+
+				'''8 - add delimiter with the space char to the end of the
+				sentence (i + " ")'''
+				sentence_text = word + sentence_text + i + " "
+				reverse_text += sentence_text
+				sentence_text = ""
+				flag_previous_was_delimiter = True
+
+			'''2 - put the word to empty string to be prepared for next word'''
+			word = ""
+		else:
+			'''1 - add charaters to form word ''' 
+			word += i
+
+	'''9 - last character is space, because of i + " " adding, so one needs to
+	exclude it'''	
+	return reverse_text[:-1]
+
+if __name__ == "__main__":
+	print(reverse_words(text, delimiter))

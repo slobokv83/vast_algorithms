@@ -1,0 +1,30 @@
+from math import ceil
+lst = list(range(100))
+
+def extract_evenly(lst, extract_number):
+  elem_number = len(lst)
+  div = 2
+  even_start = 0
+  odd_start = 1
+  lst_out = []
+
+  if elem_number/2 > extract_number:
+    return lst[::2]
+  else:
+    while elem_number % extract_number != 0:
+      if div == 2:
+        lst_out = lst[even_start::div]
+   
+      res = elem_number/div
+      extract_number = extract_number - res
+      div = int(ceil(elem_number / extract_number))
+
+      if div != 2:
+        lst_out += lst[odd_start::div]
+        odd_start += 2
+  
+  return sorted(set(lst_out))     # set(lst[0::2] + lst[1::12] + lst[3::180]) #
+
+print(len(extract_evenly(lst, 530000)))
+
+

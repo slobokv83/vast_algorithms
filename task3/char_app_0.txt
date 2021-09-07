@@ -1,0 +1,16 @@
+"""
+aabbccsjdalsakfjtt
+"""
+
+def char_app(input, apperance):
+  dict_char = {}
+  for i in input:
+    if i not in dict_char:
+      dict_char[i] = 1
+    else:
+      dict_char[i] += 1
+
+    if dict_char[i] == apperance:
+      return i
+
+print(char_app('bbcccsjdalsakfjtt', 3))

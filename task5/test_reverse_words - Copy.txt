@@ -1,0 +1,29 @@
+from reverse_words import reverse_words
+import traceback
+
+delimiter = [".", "?", "!"]
+
+def test_reverse_words():
+	assert reverse_words(
+		"This in London is very beautiful. I think I will stay more. My holiday will be the best in years. So, I will enjoy it.", delimiter
+	) == "Beautiful very is London in this. More stay will I think i. Years in best the be will holiday my. It enjoy will I so,."
+	assert reverse_words(
+		"Very good to learn Physics. I cannot disagree about THE best science ever. Do you like it?", delimiter
+	) == "Physics learn to good very. Ever science best THE about disagree cannot i. It like you do?"
+	assert reverse_words(
+		"More to be discovered - in this post you should learn fast. Can Ben follow me? What do You think?", delimiter
+	) == "Fast learn should you post this in - discovered be to more. Me follow Ben can? Think You do what?"
+	assert reverse_words(
+		"Agree with you the council does. Your apprentice Skywalker will be.", delimiter
+	) == "Does council the you with agree. Be will Skywalker apprentice your."
+	assert reverse_words(
+		"Agree with you the council does. Your apprentice Skywalker will be. Agree with you the council does. Your apprentice Skywalker will be.", delimiter
+	) == "Does council the you with agree. Be will Skywalker apprentice your. Does council the you with agree. Be will Skywalker apprentice your."
+
+if __name__ == '__main__':
+  try:
+    test_reverse_words()
+    print('PASS')
+  except:
+    print('FAIL')
+    traceback.print_exc()	

@@ -1,0 +1,27 @@
+from math import ceil
+lst = list(range(900000))
+
+
+def extract_evenly(lst, extract_number):
+  elem_number = len(lst)
+  div = 2
+  divs = [2]
+  lst_out = []
+
+  if elem_number/2 > extract_number:
+    return lst[::2]
+  else:
+    while elem_number % extract_number != 0:
+      res0 = elem_number/div
+      extract_number = extract_number - res0
+      div = int(ceil(elem_number / extract_number))
+      divs.append(div)
+  
+  for i in divs:
+    lst_out += lst[::i]
+
+  return lst_out
+
+print(len(extract_evenly(lst, 530000)))
+
+
